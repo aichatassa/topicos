@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Classification</title>
+
+</head>
+<body>
+    <h1>Machine Learning Classification</h1>
+    <form action="/train_test" method="post">
+        <div class="classifier">
+            <label for="classifier">Classifier:</label>
+            <select id="classifier" name="classifier">
+                <option value="knn">KNN</option>
+                <option value="svm">SVM</option>
+                <option value="mlp">MLP</option>
+                <option value="dt">Decision Tree</option>
+            </select>
+        </div>
+    
+
+        <div>
+            <label for="param1">Parameter 1:</label>
+            <input type="text" id="param1" name="param1">
+        </div>
+        
+
+        <div>
+            <label for="param2">Parameter 2:</label>
+            <input type="text" id="param2" name="param2">
+        </div>
+        
+
+        <div>
+            <label for="param3">Parameter 3:</label>
+            <input type="text" id="param3" name="param3">
+        </div>
+    
+
+        <button type="submit">Train and Test</button>
+
+    </form>
+    <div>
+        <h3>Parâmetros do KNN:</h3>
+        <p>{{ knn_params }}</p>
+    </div>
+    
+    <div>
+        <h3>Parâmetros do SVM:</h3>
+        <p>{{ svm_params }}</p>
+    </div>
+    
+    <div>
+        <h3>Parâmetros do MLP:</h3>
+        <p>{{ mlp_params }}</p>
+    </div>
+    
+    <div>
+        <h3>Parâmetros do Decision Tree:</h3>
+        <p>{{ dt_params }}</p>
+    </div>
+</body>
+</html>
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 35%;
+    }
+    button {
+        margin-top: 20px;
+    }
+    .classifier {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+</style>
